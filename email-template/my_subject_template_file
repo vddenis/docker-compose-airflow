@@ -1,0 +1,1 @@
+Airflow Alert: Dag '{{ti.dag_id}}' has failed!

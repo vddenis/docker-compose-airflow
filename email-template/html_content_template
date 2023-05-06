@@ -1,0 +1,7 @@
+Try {{try_number}} out of {{max_tries + 1}}<br>
+<b>Dag:</b> {{ti.dag_id}}<br>
+<b>Task:</b> {{ti.task_id}}<br>
+<b>Duration:</b> {{ti.duration}}<br>
+<b>Exception:</b><br>{{exception_html}}<br>
+<b>Log:</b> <a href="{{ti.log_url}}">Link</a><br>
+<b>Host:</b> {{ti.hostname}}
