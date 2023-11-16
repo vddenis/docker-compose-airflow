@@ -4,7 +4,7 @@ imageName=airflow-image:latest
 
 if (! docker stats --no-stream ); #проверяем, запущен ли докер
 then
-    echo "\033[0;31mERROR\033[0m"
+    echo "ERROR"
     set -e
 else
 
@@ -26,11 +26,11 @@ else
             if docker ps -f name=airflow | grep '(healthy)' | wc -l | grep -q '3';
             then
                 echo "OK: Containers are ready:"
-                echo "\033[1;32mAirflow is ready! Please follow\033[0m http://localhost:8080/ \033[1;32mvia web-browser\033[0m"
+                echo "Airflow is ready! Please follow http://localhost:8080/ via web-browser"
                 break
             else
                 if [[ "$i" -eq 10 ]]; then 
-                    echo "\033[0;31mERROR:\033[0m Containers did not become healthy. Please try again or check your code."
+                    echo "ERROR: Containers did not become healthy. Please try again or check your code."
                     docker-compose down #если не получилось, вырубаем контенеры
                 else
                     sleep 30
